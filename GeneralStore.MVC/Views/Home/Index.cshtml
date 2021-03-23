@@ -3,9 +3,12 @@
 }
 
 <div class="jumbotron">
-    <h1>General Store</h1>
-    <p class="lead">General Store is a simple web app powered by ASP.NET Web MVC that allows users to come to a general store and create and manage products, customers, and transactions.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Products</h1>
+    <p class="lead">
+        Our General Store, located in rural Indiana, is host to a multitude of fine food and items of distinction.<br />
+        Come browse our products and see what we have for you.
+    </p>
+    @Html.ActionLink("Check Products", "Index", "Product", null, new { @class = "btn btn-primary btn-large" })
 </div>
 
 <div class="row">
@@ -19,7 +22,7 @@
     <div class="col-md-4">
         <h2>Get More Information</h2>
         <p>Click here to learn more about General Store.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">More Info &raquo;</a></p>
+        @Html.ActionLink("Learn More About Us", "About")
     </div>
     <div class="col-md-4">
         <h2>Get In Touch</h2>
