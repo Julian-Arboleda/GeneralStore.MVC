@@ -40,7 +40,7 @@ namespace GeneralStore.MVC.Controllers
 
         // GET: Delete
         // Customer/Delete/{id}
-        [HttpDelete]
+        [HttpGet]
         public ActionResult Delete(int? id)
         {
             if (id == null)
