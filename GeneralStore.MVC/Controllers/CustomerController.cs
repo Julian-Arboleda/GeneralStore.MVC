@@ -100,7 +100,7 @@ namespace GeneralStore.MVC.Controllers
         }
 
         // GET: Details
-        // Customer/Edit/{id}
+        // Customer/Details/{id}
         [HttpGet]
         public ActionResult Details(int? id)
         {

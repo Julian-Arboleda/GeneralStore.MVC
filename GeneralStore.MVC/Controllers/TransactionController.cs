@@ -68,6 +68,58 @@ namespace GeneralStore.MVC.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        // GET: Edit
+        // Transaction/Edit/{id}
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            ViewBag.CustomerID = new SelectList(_db.Customers, "CustomerID", "FullName");
+            ViewBag.ProductID = new SelectList(_db.Products, "ProductID", "Name");
+
+            Transaction transaction = _db.Transactions.Find(id);
+            if (transaction == null)
+            {
+                return HttpNotFound();
+            }
+            return View(transaction);
+        }
+
+        // POST: Edit
+        // Transaction/Edit/{id}
+        [HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Transaction transaction)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Entry(transaction).State = System.Data.Entity.EntityState.Modified;
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(transaction);
+        }
+
+        // GET: Details
+        // Transaction/Details/{id}
+        [HttpGet]
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            Transaction transaction = _db.Transactions.Find(id);
+            if (transaction == null)
+            {
+                return HttpNotFound();
+            }
+            return View(transaction);
+        }
     }
 }
 
