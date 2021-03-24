@@ -124,6 +124,8 @@ namespace GeneralStore.MVC.Controllers
 }
 
 
+//alt to select list
+// _db.Customers.Select(c => SelectListItem() { Text = c.FullName, Value = c.CustomerId })
 
 
 

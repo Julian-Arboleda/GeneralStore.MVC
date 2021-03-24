@@ -22,6 +22,7 @@ namespace GeneralStore.MVC.Models
     }
 }
 
+// ENTITY knows you're using a joining table when you use Customerid n ProductId in other classes automatically so the FK annotation isn't neccessary
 
 
 /* [Required]
