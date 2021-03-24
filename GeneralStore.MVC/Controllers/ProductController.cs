@@ -18,7 +18,7 @@ namespace GeneralStore.MVC.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            // See below (modifying ApplicatoinDbContext class)
+            // See below (modifying ApplicationDbContext class)
             List<Product> productList = _db.Products.ToList();
             List<Product> orderedList = productList.OrderBy(prod => prod.Name).ToList();
             return View(orderedList);
